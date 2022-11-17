@@ -1,11 +1,6 @@
 import numpy as np
-import dash
-import dash_html_components as html
-import dash_core_components as dcc
 import plotly.graph_objects as go
 import plotly.express as px
-from dash.dependencies import Input, Output
-from jupyter_dash import JupyterDash
 import pandas as pd
 import streamlit as st
 st.set_page_config(page_title=None, page_icon=None, layout="wide", initial_sidebar_state="auto", menu_items=None)
