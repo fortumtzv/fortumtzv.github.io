@@ -4,7 +4,7 @@ import plotly.express as px
 import numpy as np
 
 
-DATA_URL = 'Superstore.csv'
+DATA_URL = 'https://raw.githubusercontent.com/jeaggo/tc3068/master/Superstore.csv'
 
 @st.cache
 def first_load(data):
