@@ -1,18 +1,20 @@
 import streamlit as st
 import pandas as pd
+from os.path import splitext
 
 st.title('Streamlit - Netflix')
 sidebar = st.sidebar
 
 DATA_URL = 'movies.csv'
 
-st.header("Tabla de Peliculas")
 @st.cache
 def load_data():
     data = pd.read_csv(DATA_URL)
     return data
 data = load_data()
-agree = sidebar.checkbox("Quieres ver la tabla de peliculas")
+
+st.header("Dataset")
+agree = sidebar.checkbox("Quieres ver la base de datos ? ")
 if agree:
     st.dataframe(data)
 
@@ -39,11 +41,7 @@ def load_data_bydirector(director):
 
     return filtered_data_bydirector
 
-@st.cache
-def load_data():
-    data = pd.read_csv(DATA_URL)
-    return data
-data = load_data()
+
 director = sidebar.selectbox('Nombre del Director: ',data['director'].unique())
 btndirector = st.sidebar.button('Buscar por Director')
 
